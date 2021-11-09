@@ -3,6 +3,8 @@ const express = require('express')
 
 // express app
 const app = express()
+const Port = process.env.PORT || 5000
+
 const locations = require('./routes/locations')
 
 //parse form data
@@ -16,9 +18,9 @@ const cors = require('cors')
 app.use(cors())
 app.use('/api', locations)
 app.get('/', (req, res) => {
-     res.status(200).send("Home Page")
+    res.status(200).send("Home Page")
 })
-app.listen(5000, () => {
-    console.log("Server listening on port 5000...")
+app.listen(Port, () => {
+    console.log(`Server listening on port ${Port}`)
 
 })
