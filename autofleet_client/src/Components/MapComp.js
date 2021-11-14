@@ -9,7 +9,6 @@ import Button from 'react-bootstrap/Button';
 
 const CarComponent = ({ text }) => <div>{text}</div>;
 
-
 const MapComp = () => {
     const dispatch = useDispatch();
     const defaultProps = {
@@ -55,7 +54,7 @@ const MapComp = () => {
             <Grid item xs={9}>
                 <div style={{ height: '100vh', width: '100%' }}>
                     <GoogleMapReact
-                    bootstrapURLKeys={{ key: 'AIzaSyB6eO2w0PoRiDYrWa7BtJFx5Hf2GcmNqTE' }}
+                    bootstrapURLKeys={{ key: process.env.APIKEY }}
                     defaultCenter={defaultProps.center}
                     defaultZoom={defaultProps.zoom}
                     yesIWantToUseGoogleMapApiInternals
